@@ -1,12 +1,15 @@
-# geomath-java-demo
+# geomath-python-demo
 
-Tiny 2D geometry helpers with **one deliberate bug** to demo AI code-fixing (Codex/ChatGPT).
+Tiny 2D geometry helpers rewritten in Python with **one deliberate bug** to demo AI code-fixing.
 
 ## Quick start
 
 ```bash
-# Java 17+ recommended
-mvn -q -version
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+pytest
+```
 
-# Run tests
-mvn -q test
+`test_rotate_degrees_90_fails_intentionally` is expected to fail because of the deliberate bug
+in ``Vector2D.rotate`` when `degrees=True`.
